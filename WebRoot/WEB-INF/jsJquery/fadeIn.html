@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!--jQuery Fading 方法
+通过 jQuery，您可以实现元素的淡入淡出效果。
+jQuery 拥有下面四种 fade 方法：
+fadeIn()
+fadeOut()
+fadeToggle()
+fadeTo()
+jQuery fadeIn() 方法
+jQuery fadeIn() 用于淡入已隐藏的元素。
+语法：
+$(selector).fadeIn(speed,callback);
+可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
+可选的 callback 参数是 fading 完成后所执行的函数名称。
+下面的例子演示了带有不同参数的 fadeIn() 方法：
+实例
+$("button").click(function(){
+  $("#div1").fadeIn();
+  $("#div2").fadeIn("slow");
+  $("#div3").fadeIn(3000);
+});-->
+
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="./scripts/jquery/jquery-2.1.0.js"></script>
+<script>
+$(document).ready(function(){
+
+$("button").click(function(){
+$("#div1").fadeIn();
+$("#div2").fadeIn("slow");
+$("#div3").fadeIn(3000);
+});
+
+});
+
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+<body>
+<p>演示带有不同参数的 fadeIn() 方法。</p>
+<button>点击这里，使三个矩形淡入</button>
+<br><br>
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div>
+<br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div>
+<br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+</body>
+</body>
+</html>

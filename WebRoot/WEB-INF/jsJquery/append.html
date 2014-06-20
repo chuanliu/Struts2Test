@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="./scripts/jquery/jquery-2.1.0.js"></script>
+<script>
+$(document).ready(function(){
+$("button").click(function(){
+var txt1="<p>Text. </p>";
+var txt2=$("<p></p>").text("Text.");
+var txt3=document.createElement("P");
+txt3.innerHTML="Text.";
+$("body").append(txt1, txt2, txt3);
+
+});
+});
+
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+<p>This is a paragraph.</p>
+<button>追加文本</button>
+</body>
+</html>

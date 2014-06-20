@@ -1,0 +1,42 @@
+.icon-add {
+	background-image: url(../images/add.png) !important;
+}
+
+.icon-delete {
+	background-image: url(../images/delete.png) !important;
+}
+
+.icon-save {
+	background-image: url(../images/save.gif) !important;
+}
+
+.icon-refresh {
+    background-image: url(../images/refresh.gif) !important;
+}
+.icon-close {
+    background-image: url(../images/close.gif) !important;
+}
+.icon-next {
+    background-image: url(../images/page-next.gif) !important;
+}
+.icon-prev {
+    background-image: url(../images/page-prev.gif) !important;
+}
+.upload-icon {
+    background: url('../images/image_add.png') no-repeat 0 0 !important;
+}
+.folder{
+	background: url('../images/folder.gif') !important;
+}
+#fi-button-msg {
+    border: 2px solid #ccc;
+    padding: 5px 10px;
+    background: #eee;
+    margin: 5px;
+    float: left;
+}
+.x-debug .x-form-file-wrap .x-form-file-input {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0.6);
+    opacity: 0.6;
+    background-color: gray;
+}

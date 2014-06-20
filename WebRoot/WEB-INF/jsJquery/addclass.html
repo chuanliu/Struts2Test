@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="./scripts/jquery/jquery-2.1.0.js"></script>
+<meta charset="UTF-8">
+<script>
+$(document).ready(function(){
+  $("#add").click(function(){
+    $("h1,h2,p").addClass("blue");
+    $("div").addClass("important blue");
+  });
+  $("#del").click(function(){
+    $("h1,h2,p").removeClass("blue");
+    $("div").removeClass("important blue");
+  });
+  $("#toggle").click(function(){
+  $("h1,h2,p").toggleClass("blue");
+  });
+});
+</script>
+<style type="text/css">
+.important
+{
+font-weight:bold;
+font-size:xx-large;
+}
+.blue
+{
+color:blue;
+}
+</style>
+</head>
+<body>
+
+<h1>标题 1</h1>
+<h2>标题 2</h2>
+<p>这是一个段落。</p>
+<p>这是另一个段落。</p>
+<div>这是非常重要的文本！</div>
+<br>
+<button id="add">向元素添加类</button>
+<button id="del">向元素删除类</button>
+<button id="toggle">切换元素中的类</button>
+
+</body>
+</html>

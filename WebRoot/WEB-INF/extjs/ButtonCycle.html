@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ext Chart</title>
+<link rel="stylesheet" type="text/css"
+	href= "./styles/extjs4.1.1/resources/css/ext-all.css" />
+<script
+	src="./scripts/extjs4.1.1/ext-all-debug.js"></script>
+
+<script>
+Ext.onReady(function(){
+Ext.create('Ext.button.Cycle', {
+    showText: true,
+    prependText: 'View as ',
+    renderTo: Ext.getBody(),
+    menu: {
+        id: 'view-type-menu',
+        width: 120,
+        items: [{
+            text: 'text only',
+            iconCls: 'view-text',
+            checked: true
+        },{
+            text: 'HTML',
+            iconCls: 'view-html'
+        }]
+    },
+    changeHandler: function(cycleBtn, activeItem) {
+        Ext.Msg.alert('Change View', activeItem.text);
+    }
+});
+
+});
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+
+
+</html>

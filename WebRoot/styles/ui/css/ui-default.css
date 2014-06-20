@@ -1,0 +1,97 @@
+
+/*************************************************************************************
+*		公共 class 
+*************************************************************************************/
+body{font: 12px Verdana;}
+/*color*/
+.bdc-1{border-color:#666}
+.bdc-2{border-color:#ccc}
+
+.bgc-0{background-color: #fff; color:#333;}
+.bgc-1{color:#fff;
+  background-color: #333;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#333), to(#666));
+  background-image: -webkit-linear-gradient(top, #333, #666);
+  background-image:    -moz-linear-gradient(top, #333, #666);
+  background-image:      -o-linear-gradient(top, #333, #666);
+  background-image:         linear-gradient(to bottom, #333, #666);
+}
+
+.bgc-2{color:#333;
+  background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#e0e0e0));
+  background-image: -webkit-linear-gradient(top, #eeeeee, #e0e0e0);
+  background-image:    -moz-linear-gradient(top, #eeeeee, #e0e0e0);
+  background-image:      -o-linear-gradient(top, #eeeeee, #e0e0e0);
+  background-image:         linear-gradient(to bottom, #eeeeee, #e0e0e0);
+}
+
+/* layout class */
+.layout-relative{position:relative;}
+.layout-fill{position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;padding:0;margin:0;border:0;}
+.layout-ztop{z-index:99999;}
+.layout-noedge{padding:0;margin:0;border:0;}
+
+/* effect class */
+.effect-dropshadow{
+	box-shadow:  0px 0px 15px 5px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow:  0px 0px 15px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/**
+*Wheel
+*/
+.wheel-menu-group{
+	transition: opacity,visibility 0.5s;
+	-moz-transition-property: opacity,visibility 0.5s;
+	-webkit-transition-property:opacity,visibility 0.5s;
+	-o-transition-property:width; opacity,visibility 0.5s;
+	
+	transition-timing-function: linear;
+	-moz-transition-timing-function: linear;
+	-webkit-transition-timing-function: linear;
+	-o--timing-function: linear;
+}
+
+/**********************************************************************
+*grid
+***********************************************************************/
+.d-grid-group-collapsed {
+    background:transparent no-repeat 0 -1px;
+    background-image: url(../images/group-expand.gif);
+    padding: 0 0 0 16px;
+	font-weight:800;
+	margin:0 0 0 2px;
+	overflow:visible;
+	text-shadow: 0px 0px 8px rgba(255, 255, 255, 1);
+	position: absolute;
+}
+
+.d-grid-group-no-expand {
+    background:transparent no-repeat 0 -1px;
+    background-image: none;
+    padding: 0 0 0 2px;
+	font-weight:300;
+	margin:0 0 0 2px;
+	overflow:visible;
+	text-shadow: 0px 0px 8px rgba(255, 255, 255, 1);
+	position: absolute; 
+}
+
+.d-grid-group-expand {
+    background:transparent no-repeat 0 -1px;
+    background-image: url(../images/group-collapse.gif);
+    padding: 0 0 0 16px;
+	font-weight:800;
+	margin:0 0 0 2px;
+	overflow:visible;
+	text-shadow: 0px 0px 8px rgba(255, 255, 255, 1);
+	position: absolute; 
+}
+
+.d-grid-group-header-hidden{
+	display:none;
+}
+.x-grid-cell-inner{padding-top:0px; padding-bottom:0px;}

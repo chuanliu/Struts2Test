@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ext memu</title>
+<link rel="stylesheet" type="text/css"
+	href= "./styles/extjs4.1.1/resources/css/ext-all.css" />
+<script
+	src="./scripts/extjs4.1.1/ext-all-debug.js"></script>
+
+<script>
+Ext.onReady(function(){
+
+Ext.create('Ext.menu.Menu', {
+    width: 120,
+    margin: '0 0 10 0',
+    floating: false,  // usually you want this set to True (default)
+    renderTo: Ext.getBody(),  // usually rendered by it's containing component
+    items: [{
+        text: 'regular item 1'
+    },{
+        text: 'regular item 2'
+    },{
+        text: 'regular item 3'
+    }]
+});
+
+Ext.create('Ext.menu.Menu', {
+    width: 120,
+    margin: '0 0 10 0',
+    plain: true,
+    floating: false,  // usually you want this set to True (default)
+    renderTo: Ext.getBody(),  // usually rendered by it's containing component
+    items: [{
+        text: 'plain item 1'
+    },{
+        text: 'plain item 2'
+    },{
+        text: 'plain item 3'
+    }]
+});
+
+
+Ext.create('Ext.menu.Menu', {
+    width: 120,
+    margin: '0 0 10 0',
+    plain: true,
+    floating: false,  // usually you want this set to True (default)
+    renderTo: Ext.getBody(),  // usually rendered by it's containing component
+    items: [{
+        text: 'icon item',
+        iconCls: 'add16'
+    },{
+        text: 'text item'
+    },{
+        text: 'plain item',
+        plain: true
+    }]
+});
+
+
+var dateMenu = Ext.create('Ext.menu.DatePicker', {
+    handler: function(dp, date){
+        Ext.Msg.alert('Date Selected', 'You selected ' + Ext.Date.format(date, 'M j, Y'));
+    }
+});
+
+Ext.create('Ext.menu.Menu', {
+    width: 140,
+    height: 100,
+    margin: '0 0 10 0',
+    floating: false,  // usually you want this set to True (default)
+    renderTo: Ext.getBody(),  // usually rendered by it's containing component
+    items: [{
+        text: 'choose a date',
+        menu: dateMenu
+    },{
+        iconCls: 'add16',
+        text: 'icon item'
+    },{
+        text: 'regular item'
+    }]
+});
+
+
+Ext.create('Ext.picker.Color', {
+    value: '993300',  // initial selected color
+    renderTo: Ext.getBody(),
+    listeners: {
+        select: function(picker, selColor) {
+            alert(selColor);
+        }
+    }
+});
+
+
+Ext.create('Ext.picker.Time', {
+   width: 60,
+   minValue: Ext.Date.parse('04:30:00 AM', 'h:i:s A'),
+   maxValue: Ext.Date.parse('08:00:00 AM', 'h:i:s A'),
+   renderTo: Ext.getBody()
+});
+
+
+});
+
+
+</script>
+</head>
+<body>
+
+</body>
+
+
+</html>

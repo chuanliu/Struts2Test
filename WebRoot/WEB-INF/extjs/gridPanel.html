@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href= "./styles/extjs4.1.1/resources/css/ext-all.css" />
+<script
+	src="./scripts/extjs4.1.1/ext-all-debug.js"></script>
+
+<script>
+Ext.onReady(function(){
+
+Ext.create('Ext.data.Store', {
+    storeId:'simpsonsStore',
+    fields:['name', 'email', 'phone'],
+    data:{'items':[
+        { 'name': 'Lisa',  "email":"lisa@simpsons.com",  "phone":"555-111-1224" },
+        { 'name': 'Bart',  "email":"bart@simpsons.com",  "phone":"555-222-1234" },
+        { 'name': 'Homer', "email":"home@simpsons.com",  "phone":"555-222-1244"  },
+        { 'name': 'Marge', "email":"marge@simpsons.com", "phone":"555-222-1254"  }
+    ]},
+    proxy: {
+        type: 'memory',
+        reader: {
+            type: 'json',
+            root: 'items'
+        }
+    }
+});
+
+Ext.create('Ext.grid.Panel', {
+    title: 'Simpsons',
+    store: Ext.data.StoreManager.lookup('simpsonsStore'),
+    columns: [
+        { text: 'Name',  dataIndex: 'name' },
+        { text: 'Email', dataIndex: 'email', flex: 1 },
+        { text: 'Phone', dataIndex: 'phone' }
+    ],
+    height: 200,
+    width: 400,
+    renderTo: Ext.getBody()
+});
+
+Ext.create('Ext.grid.Panel', {
+    			title : 'Members',
+    			collapsible : false,
+    			autoScroll : true,
+    			cls:'iScroll',
+    			border:0,
+    			region : 'center',
+      			renderTo: Ext.getBody(),
+    			store : Ext.create('Ext.data.Store', {
+    				fields : [ 'id', 'name', 'username' ,'contact', 'email' ],
+    				data : []
+    			}),
+    			columns : [ {
+    				text : 'Name',
+    				dataIndex : 'name'
+    			},{
+    				text : 'User Name',
+    				dataIndex : 'username'
+    			},{
+    				text : 'Contact',
+    				dataIndex : 'contact'
+    			}, {
+    				text : 'Email',
+    				dataIndex : 'email',
+    			} ],
+    		});
+
+});
+
+
+</script>
+</head>
+<body>
+
+</body>
+
+
+</html>

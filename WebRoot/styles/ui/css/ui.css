@@ -1,0 +1,107 @@
+/*
+ * override the collapsible area  
+ */
+.x-panel-header {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.x-tool-collapse-north {
+    background-position: 0 -60px;
+}
+
+.x-border-layout-ct {
+	background-color: transparent !important;
+}
+
+.x-panel {
+	background: repeat url(../images/panel-background.png)
+}
+
+.x-panel-tl .x-panel-header {
+	background: repeat-x url(../images/panel-header.png)
+	panel-head-background
+}
+
+.x-list-over {
+	background-color: #cccccc;
+}
+
+.x-list-selected {
+	background-color: #666666;
+}
+
+
+.dot {
+  stroke: #000;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.label {
+  fill: #777;
+}
+
+.year.label {
+  font: 500 196px "Helvetica Neue";
+  fill: #ddd;
+}
+
+.year.label.active {
+  fill: #aaa;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+  cursor: ew-resize;
+  z-index: 2000;
+}
+
+
+
+/* workspace */
+.ui-workspace {
+	background: repeat url(../images/workspace-background.png);
+}
+
+/* logo */
+.ui-logo {
+    top: 0;
+	left: 0;
+    bottom: 25px;
+	right: 40px;
+	background: no-repeat right bottom url(../images/logo1.png);
+}
+
+/* workbench */
+.ui-workbench {
+    top: 10px;
+	left: 10px;
+    bottom: 10px;
+	right: 10px;
+}
+
+/* wheel */
+.ui-wheel {
+    top: 0;
+	left: 0;
+    bottom: 0;
+	right: 0;
+	pointer-events: none;	/* allow click-through for mouse events */
+	z-index: 2000;
+}
+
+#ui-wheel-cow {
+	background-image:url(../images/wheel-background.png);
+}
+.my_field {
+    top: 10;
+    left: 10;
+    bottom: 10;
+    right: 10;
+}

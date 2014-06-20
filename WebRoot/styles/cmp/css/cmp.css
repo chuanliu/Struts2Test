@@ -1,0 +1,321 @@
+/*!
+ * Ext JS Library 3.4.0
+ * Copyright(c) 2006-2011 Sencha Inc.
+ * licensing@sencha.com
+ * http://www.sencha.com/license
+ */
+.nobreak{white-space:nowrap;}
+.search-item {
+    font:normal 11px tahoma, arial, helvetica, sans-serif;
+    padding:3px 10px 3px 10px;
+    border:1px solid #fff;
+    border-bottom:1px solid #eeeeee;
+    white-space:normal;
+    color:#555;
+}
+.search-item h3 {
+    display:block;
+    font:inherit;
+    font-weight:bold;
+    color:#222;
+}
+
+.search-item h3 span {
+    float: right;
+    font-weight:normal;
+    margin:0 0 5px 5px;
+    width:100px;
+    display:block;
+    clear:none;
+}
+
+#search-results a {
+	color: #385F95;
+	font:bold 11px tahoma, arial, helvetica, sans-serif;
+	text-decoration:none;
+}
+#search-results a:hover {
+	text-decoration:underline;
+}
+#search-results .search-item {
+	padding:5px;
+}
+#search-results p {
+	margin:3px !important;
+}
+#search-results {
+	border-bottom:1px solid #ddd;
+	margin: 0 1px;
+	height:300px;
+	overflow:auto;
+}
+#search-results .x-toolbar {
+	border:0 none;
+}
+.drag-target-hover {
+   color: red;
+}
+
+/* add by yangjunping 2012-12-7*/
+.browser text {
+    text-anchor: end;
+}
+
+svg {
+    font: 10px sans-serif;
+}
+
+.brush .extent {
+    stroke: #fff;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+/* .x.axis path { */
+/*   display: none; */
+/* } */
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.pointer{
+	cursor : pointer;
+}
+
+.reversalPanel .front {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 8;
+	width: inherit;
+	height: inherit;
+/* 	border: 1px solid #ccc; */
+/* 	background: #6b7077; */
+/* 	text-align: center; */
+
+	/*-moz-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+	-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+	box-shadow: 0 1px 5px rgba(0,0,0,0.9);*/
+
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+
+	-moz-transform: rotateX(0deg) rotateY(0deg);
+	-moz-transform-style: preserve-3d;
+	-moz-backface-visibility: hidden;
+
+	/* -- transition is the magic sauce for animation -- */
+	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	
+	
+}
+.reversalPanel.flip .front {
+	z-index: 8;
+/* 	border-color: #eee; */
+/* 	background: #333; */
+
+	-webkit-transform: rotateX(180deg);
+	-moz-transform: rotateX(180deg);
+	
+	-moz-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+	box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+	
+	
+	
+}
+
+.reversalPanel .back {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 7;
+	width: inherit;
+	height: inherit;
+/* 	border: 1px solid #ccc; */
+/* 	background: #333; */
+/* 	text-shadow: 1px  1px 1px rgba(0,0,0,0.6);  */
+	
+	-webkit-transform: rotateX(-180deg);
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+
+	-moz-transform: rotateX(-180deg);
+	-moz-transform-style: preserve-3d;
+	-moz-backface-visibility: hidden;
+
+	/* -- transition is the magic sauce for animation -- */
+	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+}
+
+.reversalPanel.flip .back {
+	z-index: 9;
+/* 	background: #80868d; */
+
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+	-moz-transform: rotateX(0deg) rotateY(0deg);
+
+	box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+}
+
+.cmp-grid-success-cell {
+	background-image: url('../images/successful.gif');
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+.cmp-grid-error-cell {	
+	background-image: url('../../extjs4.1.1/resources/themes/images/gray/grid/dirty.gif');
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+a:link { text-decoration: none;color: blue;}
+a:active { text-decoration:blink}
+.drag {
+    background-image: url(../images/task.gif) !important;
+}
+.not_drag {
+    background-image: url(../images/no_task.gif) !important;
+}
+.deletedVersion {
+	background-image: url(../images/close.gif) !important;
+	background-repeat: no-repeat;
+}
+
+progress {
+    border-radius: 2px;
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+    border-top: 1px #aaa solid;
+    background-color: #eee;
+}
+  
+progress::-webkit-progress-bar {
+    background-color: #d7d7d7;
+}
+  
+progress::-webkit-progress-value {
+    background-color: #aadd6a;
+}
+.x-grid-dirty-cell{
+	background-image:none;
+}
+
+.self_define_checked {
+	background-image: url('../images/check_locked.gif');
+	background-repeat: no-repeat;
+}
+.x-form-strengthmeter {
+	width: 100%;
+	float: right;
+	background: #ff4c00; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background:
+		url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNGMwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2VkZDcxMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxYWZmMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(left, #ff4c00 0%, #edd712 50%, #1aff00 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #ff4c00),
+		color-stop(50%, #edd712), color-stop(100%, #1aff00) );
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, #ff4c00 0%, #edd712 50%, #1aff00 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #ff4c00 0%, #edd712 50%, #1aff00 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #ff4c00 0%, #edd712 50%, #1aff00 100%);
+	/* IE10+ */
+	background: linear-gradient(left, #ff4c00 0%, #edd712 50%, #1aff00 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(  startColorstr='#ff4c00',
+		endColorstr='#1aff00', GradientType=1 ); /* IE6-8 */
+}
+
+.x-form-strengthmeter-scorebar {
+	background-color: white;
+	float: right;
+	line-height: 6px;
+	width: 100%;
+}
+
+#diagramContainer svg {
+  background-color: #FFF;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#diagramContainer svg:not(.active):not(.ctrl) {
+  cursor: crosshair;
+}
+
+#diagramContainer path.link {
+  fill: none;
+  stroke: #000;
+  stroke-width: 4px;
+  cursor: default;
+}
+
+#diagramContainer svg:not(.active):not(.ctrl) path.link {
+  cursor: pointer;
+}
+
+#diagramContainer path.link.selected {
+  stroke-dasharray: 10,2;
+}
+
+#diagramContainer path.link.dragline {
+  pointer-events: none;
+}
+
+#diagramContainer path.link.hidden {
+  stroke-width: 0;
+}
+
+#diagramContainer circle.node {
+  stroke-width: 1.5px;
+  cursor: pointer;
+}
+
+#diagramContainer circle.node.reflexive {
+  stroke: #000 !important;
+  stroke-width: 2.5px;
+}
+
+#diagramContainer text {
+  font: 12px sans-serif;
+  pointer-events: none;
+}
+
+#diagramContainer text.id {
+  text-anchor: middle;
+  font-weight: bold;
+}
+
+.extra-alt .x-grid-row-alt .x-grid-cell { 
+    background-color: #F3F3F3;     
+}

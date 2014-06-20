@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+</head>
+<body>
+
+<form id="msgbox" action="#" method="get">
+<label for="msg">your message</label>
+<input id="msg" value="" />
+<button>SEND</button>
+</form>
+
+<script>
+
+document.getElementById("msgbox").addEventListener("submit", function(e) {
+    e.preventDefault();
+    var msg = e.currentTarget.getElementById("msg").value.trim();
+    if (msg) {
+        alert(msg);
+    }
+}, false);
+
+</script>
+
+</body>
+</html>

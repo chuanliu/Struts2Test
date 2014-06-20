@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ext Chart</title>
+<link rel="stylesheet" type="text/css"
+	href= "./styles/extjs4.1.1/resources/css/ext-all.css" />
+<script
+	src="./scripts/extjs4.1.1/ext-all-debug.js"></script>
+
+<script>
+Ext.onReady(function(){
+var itemsPerPage = 2;   // set the number of items you want per page
+
+
+var store = Ext.create('Ext.data.Store', {
+    id:'simpsonsStore',
+    autoLoad: false,
+    fields:['name', 'email', 'phone'],
+    pageSize: itemsPerPage, // items per page
+     data:{'items':[
+        { 'name': 'Lisa',  "email":"lisa@simpsons.com",  "phone":"555-111-1224" },
+        { 'name': 'Bart',  "email":"bart@simpsons.com",  "phone":"555-222-1234" },
+        { 'name': 'Homer', "email":"home@simpsons.com",  "phone":"555-222-1244"  },
+        { 'name': 'Marge', "email":"marge@simpsons.com", "phone":"555-222-1254"  }
+    ]},
+    proxy: {
+        type: 'memory',
+        reader: {
+            type: 'json',
+            root: 'items'
+        }
+    }
+});
+
+
+
+// specify segment of data you want to load using params
+store.load({
+    params:{
+        // specify params for the first page load if using paging
+        start: 0,
+        limit: itemsPerPage
+        // other params
+    }
+});
+
+Ext.create('Ext.grid.Panel', {
+    title: 'Simpsons',
+    store: store,
+    columns: [
+        { header: 'Name',  dataIndex: 'name' },
+        { header: 'Email', dataIndex: 'email', flex: 1 },
+        { header: 'Phone', dataIndex: 'phone' }
+    ],
+    width: 500,
+    dockedItems: [{
+        xtype: 'pagingtoolbar',
+        store: store,   // same store GridPanel is using
+        dock: 'bottom',
+        displayInfo: true
+    }],
+    renderTo: Ext.getBody()
+});
+});
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+
+
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" 
+"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="name">
+		<field-validator type="requiredstring" short-circuit="true">
+			<message>--Request Name... ...</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w{4,25})]]></param>
+			<message>您输入的用户名只能是字母和数组，且长度必须在4到25之间</message>
+		</field-validator>
+	</field>
+
+	<field name="pass">
+		<field-validator type="requiredstring" short-circuit="true">
+			<message>Request PassWorld.....</message>
+		</field-validator>
+	</field>
+
+	<field name="age">
+		<field-validator type="requiredstring" short-circuit="true">
+			<message>Request integer</message>
+		</field-validator>
+
+		<field-validator type="int" short-circuit="true">
+			<param name="min">20</param>
+			<param name="max">50</param>
+			<message>Should between ${min} and ${max}.</message>
+		</field-validator>
+	</field>
+
+	<field name="birth">
+		<field-validator type="requiredstring" >
+			<message>date Request.....</message>
+		</field-validator>
+		<!-- <field-validator type="date">
+			下面指定日期字符串时，必须使用本Locale的日期格式
+			<param name="min">1900-01-01</param>
+			<param name="max">2050-02-21</param>
+			<message>年纪必须在到之间</message>
+		</field-validator> -->
+	</field>
+</validators> 

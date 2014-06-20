@@ -1,0 +1,78 @@
+
+<!--<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" 
+src="./scripts/jquery/jquery-2.1.0.js"></script>
+<script
+ type="text/javascript">
+$(function(){
+	$('#go').click(function(){
+		var radio = $('input[name="testradio"]').filter(':checked');
+		if(radio.length)
+		alert(radio.val());
+		else
+		alert('请选择一个radio');
+		
+	});
+	$('#go2').click(function(){
+		$('input[name="testradio"]').each(function(){
+			alert(this.value);
+		});
+	})
+	$('#go3').click(function(){
+		alert($('input[name="testradio"]').eq(2).val());
+	})
+})
+</script>
+
+</head>
+
+<body>
+<input type="radio" name="testradio" value="jquery获取radio的值" />jquery获取radio的值<br /> 
+<input type="radio" name="testradio" value="jquery获取checkbox的值" />jquery获取checkbox的值<br /> 
+<input type="radio" name="testradio" value="jquery获取select的值" />jquery获取select的值<br />
+<button id="go">选中的那个radio的值</button>
+<button id="go2">遍历所有radio的值</button>
+<button id="go3">取第二个radio的值</button>
+</body>
+</html>
+-->
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Coda Bubble Example</title>
+</head>
+<body>
+<button id="Button1">测试</button>
+<script type="text/javascript">
+function addEventHandler(target, type, func) {
+    if (target.addEventListener)
+        target.addEventListener(type, func, false);
+    else if (target.attachEvent)
+        target.attachEvent("on" + type, func);
+    else target["on" + type] = func;
+}
+
+function removeEventHandler(target, type, func) {
+    if (target.removeEventListener)
+        target.removeEventListener(type, func, false);
+    else if (target.detachEvent)
+        target.detachEvent("on" + type, func);
+    else delete target["on" + type];
+}
+
+var Button1 = document.getElementById("Button1");
+var Button1Click = function() { alert(1); };
+addEventHandler(Button1, "click",  Button1Click);
+addEventHandler(Button1, "click", function() { alert(2); } );
+addEventHandler(Button1, "click", function() { alert(3); } );
+
+removeEventHandler(Button1, "click", function() { alert(2); } );
+removeEventHandler(Button1, "click", Button1Click);
+</script>
+</body>
+</html>

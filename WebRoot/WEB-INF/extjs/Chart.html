@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ext Cycle</title>
+<link rel="stylesheet" type="text/css"
+	href= "./styles/extjs4.1.1/resources/css/ext-all.css" />
+<script
+	src="./scripts/extjs4.1.1/ext-all-debug.js"></script>
+
+<script>
+Ext.onReady(function(){
+
+Ext.define('WeatherPoint', {
+    extend: 'Ext.data.Model',
+    fields: ['temperature', 'date']
+});
+
+var store1 = Ext.create('Ext.data.Store', {
+    model: 'WeatherPoint',
+    data: [
+        { temperature: 58, date: new Date(2011, 1, 1, 8) },
+        { temperature: 63, date: new Date(2011, 1, 1, 9) },
+        { temperature: 73, date: new Date(2011, 1, 1, 10) },
+        { temperature: 78, date: new Date(2011, 1, 1, 11) },
+        { temperature: 81, date: new Date(2011, 1, 1, 12) }
+    ]
+});
+
+Ext.create('Ext.chart.Chart', {
+   renderTo: Ext.getBody(),
+   width: 400,
+   height: 300,
+   store: store1,
+   theme: 'Green',
+    axes: [
+        {
+            title: 'Temperature',
+            type: 'Numeric',
+            position: 'left',
+            fields: ['temperature'],
+            minimum: 0,
+            maximum: 100
+        },
+        {
+            title: 'Time',
+            type: 'Time',
+            position: 'bottom',
+            fields: ['date'],
+            dateFormat: 'ga'
+        }
+    ],
+     series: [
+        {
+            type: 'line',
+            xField: 'date',
+            yField: 'temperature'
+        }
+    ]
+});
+
+
+Ext.create('Ext.Button', {
+    text    : 'Dynamic Handler Button',
+    renderTo: Ext.getBody(),
+    handler : function() {
+        // this button will spit out a different number every time you click it.
+        // so firstly we must check if that number is already set:
+        if (this.clickCount) {
+            // looks like the property is already set, so lets just add 1 to that number and alert the user
+            this.clickCount++;
+            alert('You have clicked the button "' + this.clickCount + '" times.\n\nTry clicking it again..');
+        } else {
+            // if the clickCount property is not set, we will set it and alert the user
+            this.clickCount = 1;
+            alert('You just clicked the button for the first time!\n\nTry pressing it again..');
+        }
+    }
+});
+
+});
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+
+
+</html>

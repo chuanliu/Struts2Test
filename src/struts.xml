@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="mess" />
+	<constant name="struts.i18n.encoding" value="GBK" />
+
+	<package name="org.jack.app.action" extends="struts-default">
+	
+	    <interceptors>
+		<interceptor name="simpleInterceptor" class="org.jack.app.interceptor.SimpleInterceptor">
+		<param name="name">第一个拦截器</param>
+		</interceptor>
+		<interceptor name="simpleInterceptor2" class="org.jack.app.interceptor.SimpleInterceptor">
+		<param name="name">第二个拦截器</param>
+		</interceptor>
+		<interceptor-stack name="simpleStack">
+		<interceptor-ref name="simpleInterceptor"/>
+		<interceptor-ref name="simpleInterceptor2"/>
+		</interceptor-stack>
+		</interceptors>
+		<!-- -->
+		<global-results>
+			<result name="sql">/exception.jsp</result>
+			<result name="root">/exception.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="sql" exception="java.sql.SQLException"></exception-mapping>
+			<exception-mapping result="root" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		
+		<!-- -->
+		<!-- <action name="login" class="org.jack.app.action.LoginAction"> 定义三个逻辑视图和物理资源之间的映射 
+			<result name="input">/login.jsp</result> <result name="error">/error.jsp</result> 
+			<result name="success">/welcome.jsp</result> we will missing the date in 
+			requestScope <result name="success" type="redirect">/welcome.jsp</result> 
+			<result name="success">/welcome.jsp</result> </action> -->
+		<action name="login2" class="org.jack.app.action.LoginAction2">
+			<!-- 定义三个逻辑视图和物理资源之间的映射 -->
+			<result name="input">/login2.jsp</result>
+			<result name="error">/error2.jsp</result>
+			<result name="success">/welcome2.jsp</result>
+		</action>
+		<action name="regist" class="org.jack.app.action.LoginAction2"
+			method="regist">
+			<!-- 定义三个逻辑视图和物理资源之间的映射 -->
+			<result name="input">/login2.jsp</result>
+			<result name="error">/error2.jsp</result>
+			<result name="success">/welcome2.jsp</result>
+		</action>
+		<action name="login" class="org.jack.app.action.LoginRegistAction">
+			<!-- 定义三个逻辑视图和物理资源之间的映射 -->
+			<exception-mapping result="my"
+				exception="org.jack.app.action.MyException"></exception-mapping>
+			<result name="my">/exception.jsp</result>
+			<result name="input">/login2.jsp</result>
+			<result name="error">/error2.jsp</result>
+			<result name="success">/welcome2.jsp</result>
+		</action>
+
+		<action name="orglConvertLogin" class="org.jack.app.ognl.action.LoginAction">
+			<result name="input">WEB-INF/ognlConvert/login.jsp</result>
+			<result name="error">WEB-INF/ognlConvert/error.jsp</result>
+			<result name="success">WEB-INF/ognlConvert/welcome.jsp</result>
+		</action>
+		<action name="orglConvertLogin" class="org.jack.app.ognl.action.LoginAction"
+			method="executeMap">
+			<result name="input">WEB-INF/ognlConvert/login.jsp</result>
+			<result name="error">WEB-INF/ognlConvert/error.jsp</result>
+			<result name="success">WEB-INF/ognlConvert/welcome.jsp</result>
+		</action>
+		<action name="orglConvertLogin" class="org.jack.app.ognl.action.LoginAction"
+			method="executeList">
+			<result name="input">WEB-INF/ognlConvert/login.jsp</result>
+			<result name="error">WEB-INF/ognlConvert/error.jsp</result>
+			<result name="success">WEB-INF/ognlConvert/welcome.jsp</result>
+		</action>
+
+		<action name="validate.regist" class="org.jack.app.action.RegistAction">
+			<result name="input">WEB-INF/validate/regist.jsp</result>
+			<result name="error">WEB-INF/validate/error.jsp</result>
+			<result name="success">WEB-INF/validate/welcome.jsp</result>
+		</action>
+
+		<action name="processAdd" class="org.jack.app.action.AddEmpAction">
+			<result name="input">WEB-INF/validate/addEmp.jsp</result>
+			<result name="error">WEB-INF/validate/error.jsp</result>
+			<result name="success">WEB-INF/validate/welcome.jsp</result>
+		</action>
+		<action name="uploadPro" class="org.jack.app.action.UploadAction">
+		<interceptor-ref name="fileUpload">
+		<param name="allowedTypes">image/png, image/gif,image/jpeg</param>
+		<param name="maximumSize">2000000</param>
+		</interceptor-ref>
+		<interceptor-ref name="defaultStack"/>
+			<param name="savePath">/upload</param>
+			<result name="input">WEB-INF/validate/upload.jsp</result>
+			<result name="error">WEB-INF/validate/error.jsp</result>
+			<result name="success">WEB-INF/validate/welcome.jsp</result>
+		</action>
+		
+		<action name="download" class="org.jack.app.action.FileDownloadAction">
+		<!-- <interceptor-ref name="simpleInterceptor"/>
+		<interceptor-ref name="simpleInterceptor2"/> -->
+		<interceptor-ref name="simpleStack"/>
+		<interceptor-ref name="defaultStack"/>
+		<param name="inputPath">\images\疯狂1_1.zip</param>
+		<result name="success" type="stream">
+		<!-- <param name="contentType">image/jpg</param> -->
+		<param name="inputName">targetFile</param>
+		<param name="contentDisposition">filename="fengkuang1_1.zip"</param>
+		<param name="bufferSize">4096</param>
+		</result>
+		</action>
+
+		<action name="sTag*">
+			<result>WEB-INF/sTag/{1}.jsp</result>
+		</action>
+		<action name="ognlConvert*">
+			<result>WEB-INF/ognlConvert/{1}.jsp</result>
+		</action>
+		<action name="validate*">
+			<result>WEB-INF/validate/{1}.jsp</result>
+		</action>
+		
+		<action name="ddextjs*">
+			<result>WEB-INF/extjs/{1}.jsp</result>
+		</action>
+		<action name="extjshtml*">
+			<result>WEB-INF/extjs/{1}.html</result>
+		</action>
+		<action name="jsdemohtml*">
+			<result>WEB-INF/jsdemo/{1}.html</result>
+		</action>
+		<action name="jsdemo*">
+			<result>WEB-INF/jsdemo/{1}.jsp</result>
+		</action>
+		<action name="jsDomhtml*">
+			<result>WEB-INF/jsDom/{1}.html</result>
+		</action>
+		<action name="jsJqueryhtml*">
+			<result>WEB-INF/jsJquery/{1}.html</result>
+		</action>
+		
+		
+		
+		
+	</package>
+</struts>

@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Validation test</title>
+
+</head>
+<script>
+function validation(){
+var elememnt= document.getElementById("demo").value;
+if(isNaN(elememnt))
+{
+alert("请输入数字");
+}
+}
+
+</script>
+<body>
+<h2> 这是我的第一个 JavaScript</h2>
+<p id="1">请出入数字，如果不是数字，浏览器会弹出提示框 </p>
+<input id="demo" type="text"> <button onclick="validation()"> 验证数字</button>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="./scripts/jquery/jquery-2.1.0.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.get("./example/jquery/demo_test.txt",function(data,status){
+      alert("数据：" + data + "\n状态：" + status);
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<button>向页面发送 HTTP GET 请求，然后获得返回的结果</button>
+
+</body>
+</html>
